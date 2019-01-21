@@ -18,6 +18,10 @@ describe "SpellChecker", ->
       @fixture.setDictionary('en_US', dictionaryDirectory)
       expect(@fixture.isMisspelled('wwoorrddd')).toBe true
 
+    it "returns true if the word is mispelled (Issue #1)", ->
+      @fixture.setDictionary('en_US', dictionaryDirectory)
+      expect(@fixture.isMisspelled('wurd')).toBe true
+
     it "returns false if the word isn't mispelled", ->
       @fixture.setDictionary('en_US', dictionaryDirectory)
       expect(@fixture.isMisspelled('word')).toBe false
